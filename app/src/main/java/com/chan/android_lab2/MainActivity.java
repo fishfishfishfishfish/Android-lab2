@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     String getPW;
     TextInputLayout NumberText,PWText;
     EditText NText, PText;
+    RadioGroup RGroup;
     @IdRes int ChoiceRes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        RadioGroup RGroup = (RadioGroup)findViewById(R.id.choices);
+        RGroup = (RadioGroup)findViewById(R.id.choices);
         RGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -148,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int click_msg1;
+                ChoiceRes = RGroup.getCheckedRadioButtonId();
                 if (ChoiceRes==R.id.choice1) {
                     click_msg1 = R.string.click_msg_reject_student;
                 }
