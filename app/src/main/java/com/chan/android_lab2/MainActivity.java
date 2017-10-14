@@ -10,11 +10,14 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     TextInputLayout NumberText,PWText;
     EditText NText, PText;
     RadioGroup RGroup;
+    String[] data = {"请选择您的专业","计算机应用","电子政务","通讯软件","数字媒体","嵌入式软件"};
     @IdRes int ChoiceRes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,8 +170,22 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, data));
+        spinner.setDropDownHorizontalOffset(100);
+        spinner.setDropDownVerticalOffset(100);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i!=0) {
+                    Toast.makeText(getApplication(),"欢迎"+data[i]+"的朋友",Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
     }
-
-
-
 }
