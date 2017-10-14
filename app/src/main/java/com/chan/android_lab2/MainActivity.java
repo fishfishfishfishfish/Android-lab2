@@ -59,12 +59,26 @@ public class MainActivity extends AppCompatActivity {
                 if(checkedId==R.id.choice1)
                 {
                     Snackbar.make(group,R.string.choose1,Snackbar.LENGTH_LONG)
+                            .setAction(R.string.yes, new View.OnClickListener(){
+                                @Override
+                                public void onClick(View view){
+                                    Toast.makeText(getApplication(),"Snackerbar的确定按钮被点击了",Toast.LENGTH_LONG).show();
+                                }
+                            })
+                            .setActionTextColor(getResources().getColor(R.color.colorPrimary))
                             .setDuration(5000)
                             .show();
                 }
                 else
                 {
                     Snackbar.make(group,R.string.choose2,Snackbar.LENGTH_LONG)
+                            .setAction(R.string.yes, new View.OnClickListener(){
+                                @Override
+                                public void onClick(View view){
+                                    Toast.makeText(getApplication(),"Snackerbar的确定按钮被点击了",Toast.LENGTH_LONG).show();
+                                }
+                            })
+                            .setActionTextColor(getResources().getColor(R.color.colorPrimary))
                             .setDuration(5000)
                             .show();
                 }
@@ -125,7 +139,9 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view,click_msg,Snackbar.LENGTH_LONG)
                         .setAction(R.string.yes, new View.OnClickListener(){
                             @Override
-                            public void onClick(View view){}
+                            public void onClick(View view){
+                                Toast.makeText(getApplication(),"Snackerbar的确定按钮被点击了",Toast.LENGTH_LONG).show();
+                            }
                         })
                         .setActionTextColor(getResources().getColor(R.color.colorPrimary))
                         .setDuration(5000)
@@ -159,7 +175,9 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view,click_msg1,Snackbar.LENGTH_LONG)
                         .setAction(R.string.yes, new View.OnClickListener(){
                             @Override
-                            public void onClick(View view){}
+                            public void onClick(View view){
+                                Toast.makeText(getApplication(),"Snackerbar的确定按钮被点击了",Toast.LENGTH_LONG).show();
+                            }
                         })
                         .setActionTextColor(getResources().getColor(R.color.colorPrimary))
                         .setDuration(5000)
