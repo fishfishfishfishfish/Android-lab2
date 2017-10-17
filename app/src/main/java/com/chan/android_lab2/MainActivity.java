@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                     NumberText.setErrorEnabled(true);
                     NumberText.setError("学号不能为空");
                 }
-                if(getPW.length()==0)
+                if(getPW.length()==0 && getNumber.length()!=0)
                 {
                     PWText.setErrorEnabled(true);
                     PWText.setError("密码不能为空");
